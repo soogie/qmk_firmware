@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |Tab/f2|   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |Enter |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |Shift |   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   Up |'/SFT |
+ * |Shift |   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   Up |:/SFT |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |ZH/Ctl|Adjust| Alt  | GUI  |英数/L |   Space     |かな/R|  /   | Left | Down |Right |
  * `-----------------------------------------------------------------------------------'
@@ -403,8 +403,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     register_code(KC_2);
                     unregister_code(KC_2);
                 } else {
-                    register_code(KC_7);
-                    unregister_code(KC_7);
+                    unregister_code (KC_RSFT);
+                    register_code(JP_COLN);
+                    unregister_code(JP_COLN);
+                    //register_code(KC_7);
+                    //unregister_code(KC_7);
                 }
             }
             unregister_code (KC_RSFT);
